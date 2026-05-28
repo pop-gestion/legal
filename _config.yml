@@ -1,0 +1,12 @@
+title: Pop Gestion — Documents légaux
+description: Politiques de confidentialité et mentions légales des applications éditées par Pop Gestion (SARL).
+theme: minima
+lang: fr
+baseurl: /legal
+plugins:
+  - jekyll-feed
+
+# Auteur affiché dans le footer du theme minima
+author:
+  name: Pop Gestion
+  email: contact@pop-gestion.fr
