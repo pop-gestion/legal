@@ -6,7 +6,7 @@ baseurl: /legal
 plugins:
   - jekyll-feed
 
-# Auteur affiché dans le footer du theme minima
-author:
-  name: Pop Gestion
-  email: contact@pop-gestion.fr
+# Affichés dans le footer du theme minima :
+#   minima attend `author` en CHAÎNE (nom) + `email` en clé de 1er niveau (lien mailto)
+author: Pop Gestion
+email: contact@pop-gestion.fr
