@@ -13,7 +13,7 @@ Application **Ma Cave**, éditée par **Pop Gestion** (France). Cette page expli
 
 ## Comment demander la suppression
 
-- **Depuis l'application** (si disponible) : Réglages → Compte → Supprimer mon compte, puis confirmez.
+- **Depuis l'application** : onglet **Profil** → faites défiler jusqu'à la section **« Zone de danger »** → touchez **« Supprimer mon compte »** → **« Continuer »**, puis saisissez **SUPPRIMER** et touchez **« Supprimer »**.
 - **Par e-mail** : envoyez une demande à [contact@pop-gestion.fr](mailto:contact@pop-gestion.fr) depuis l'adresse e-mail de votre compte, avec pour objet « Suppression de compte Ma Cave ». Nous traitons votre demande après vérification de votre identité.
 
 ## Données supprimées
