@@ -124,6 +124,8 @@ Lorsque vous supprimez votre compte, **toutes vos données sont effacées de man
 
 ## 8. Vos droits
 
+> 🗑️ **Vous souhaitez supprimer votre compte ?** Consultez notre page dédiée : [Suppression de compte et des données](/legal/macave/suppression-compte/).
+
 Conformément au RGPD, vous disposez des droits suivants sur vos données personnelles :
 
 - **Droit d'accès** : obtenir une copie de vos données
