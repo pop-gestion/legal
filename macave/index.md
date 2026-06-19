@@ -11,7 +11,7 @@ permalink: /macave/
 **Contact :** [contact@pop-gestion.fr](mailto:contact@pop-gestion.fr)
 **Délégué à la protection des données (DPO) :** [contact@pop-gestion.fr](mailto:contact@pop-gestion.fr)
 
-**Dernière mise à jour :** 28 mai 2026
+**Dernière mise à jour :** 19 juin 2026
 
 ---
 
@@ -28,6 +28,7 @@ L'Application collecte les catégories de données suivantes :
 ### 2.1 Données de compte utilisateur
 - **Adresse email** (pour la création et l'authentification du compte)
 - **Mot de passe** (stocké chiffré, jamais consulté en clair)
+- **Nom ou pseudonyme d'affichage** (facultatif, fourni à l'inscription pour identifier les membres d'une cave partagée)
 
 Ces données sont collectées au moment de la création du compte et sont nécessaires pour permettre la sauvegarde de votre cave dans le cloud et la synchronisation entre appareils.
 
@@ -40,7 +41,8 @@ Ces données sont collectées au moment de la création du compte et sont néces
 
 ### 2.3 Données techniques
 - **Identifiant publicitaire Android (AAID)** : utilisé uniquement par notre partenaire publicitaire Google AdMob pour servir des publicités (voir section 5).
-- **Logs techniques anonymisés** (erreurs de fonctionnement) pour améliorer la stabilité de l'Application.
+
+> L'Application **n'intègre aucun outil de mesure d'audience, d'analytics ou de rapport de plantage** (type Firebase Analytics, Crashlytics, Sentry). Aucune donnée d'utilisation ou de diagnostic n'est donc collectée depuis votre appareil à ces fins.
 
 ### 2.4 Permissions appareil
 L'Application demande les permissions suivantes (vous pouvez les révoquer à tout moment depuis les paramètres Android) :
@@ -58,7 +60,6 @@ L'Application **ne collecte pas** : votre localisation, vos contacts, votre micr
 | Identification IA de vos étiquettes de bouteilles | Exécution du contrat |
 | Affichage de publicités | Consentement (formulaire UMP RGPD) ou intérêt légitime selon votre région |
 | Sécurité et prévention de la fraude | Intérêt légitime |
-| Amélioration de l'Application (logs anonymisés) | Intérêt légitime |
 
 ## 4. Sous-traitants et destinataires
 
@@ -70,10 +71,10 @@ Vos données sont traitées par les sous-traitants suivants, sélectionnés pour
 - **Localisation des données :** serveurs UE (Francfort, Allemagne)
 - **Politique :** <https://supabase.com/privacy>
 
-### 4.2 Google Gemini API (identification IA des étiquettes)
+### 4.2 Google Cloud Vision & Gemini API (identification IA des étiquettes)
 - **Société :** Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irlande
-- **Finalité :** analyse des photos d'étiquettes pour identifier la bouteille (nom, appellation, millésime)
-- **Important :** les photos d'étiquettes sont transmises à Google **uniquement pour le temps de l'analyse**, ne sont pas conservées par Google selon les conditions de l'API Gemini (paid tier).
+- **Finalité :** lecture du texte de l'étiquette (OCR via Google Cloud Vision) puis identification de la bouteille — nom, appellation, millésime, région (Google Gemini)
+- **Important :** les photos d'étiquettes sont transmises à Google **uniquement pour le temps de l'analyse**, ne sont pas conservées par Google selon les conditions des API Cloud Vision / Gemini (paid tier).
 - **Politique :** <https://policies.google.com/privacy>
 
 ### 4.3 Google AdMob (publicités)
@@ -88,6 +89,19 @@ Vos données sont traitées par les sous-traitants suivants, sélectionnés pour
 - **Société :** Google Ireland Limited
 - **Finalité :** distribution de l'Application via le Play Store, services techniques Android
 - **Politique :** <https://policies.google.com/privacy>
+
+### 4.5 Resend (envoi des emails d'invitation)
+- **Société :** Resend, Inc. (États-Unis)
+- **Finalité :** acheminer l'email d'invitation lorsqu'un utilisateur invite une personne à rejoindre sa cave partagée
+- **Données transmises :** adresse email du destinataire de l'invitation, nom de l'inviteur, nom de la cave
+- **Encadrement :** transfert hors UE encadré par les Clauses Contractuelles Types (voir section 11)
+- **Politique :** <https://resend.com/legal/privacy-policy>
+
+### 4.6 Open Food Facts (recherche d'images de bouteilles)
+- **Organisme :** Open Food Facts (association à but non lucratif, France)
+- **Finalité :** rechercher une photo illustrative de la bouteille
+- **Données transmises :** uniquement les termes de recherche (nom du domaine et appellation du vin) — **aucune donnée personnelle vous concernant n'est transmise**
+- **Politique :** <https://world.openfoodfacts.org/privacy>
 
 ## 5. Publicités et consentement RGPD
 
@@ -115,10 +129,10 @@ Ces données restent **uniquement sur votre appareil** et sont supprimées lorsq
 
 | Donnée | Durée |
 |---|---|
-| Compte utilisateur (email + mot de passe) | Jusqu'à suppression du compte par l'utilisateur |
-| Données de cave (bouteilles, historique) | Jusqu'à suppression du compte ou suppression manuelle |
-| Logs techniques | 12 mois maximum |
-| Photos d'étiquettes envoyées à Gemini | Non conservées (transmises pour analyse uniquement) |
+| Compte utilisateur (email, nom d'affichage, mot de passe) | Jusqu'à suppression du compte par l'utilisateur |
+| Données de cave (bouteilles, historique, photos d'étiquettes) | Jusqu'à suppression du compte ou suppression manuelle |
+| Photos d'étiquettes envoyées à Cloud Vision / Gemini pour analyse | Non conservées (transmises pour analyse uniquement) |
+| Email d'invitation transmis à Resend | Le temps de l'envoi (pas de conservation à des fins propres) |
 
 Lorsque vous supprimez votre compte, **toutes vos données sont effacées de manière irréversible** sous 30 jours, à l'exception des données que nous serions tenus de conserver pour une obligation légale.
 
