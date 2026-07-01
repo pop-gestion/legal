@@ -10,6 +10,7 @@ Politiques de confidentialité et mentions légales des applications éditées p
 ## Applications publiées
 
 - [**Ma Cave**](/legal/macave/) — Application mobile Android de gestion de cave à vin. Scan d'étiquettes par IA, sommelier intégré, historique de dégustation.
+- [**Kakuro & Futoshiki**](/legal/kaku/) — Jeu de logique hors-ligne (Kakuro et Futoshiki) pour Android. Publicités AdMob avec consentement RGPD.
 
 ---
 
